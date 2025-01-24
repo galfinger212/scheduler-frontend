@@ -18,7 +18,7 @@ export function Register() {
   const handleRegister = async (e: any) => {
     e.preventDefault();
     try {
-      const response = await api.post("/auth/register", { email, password });
+      await api.post("/auth/register", { email, password });
       alert("User registered successfully!");
     } catch (error: any) {
       alert("Error registering user: " + error?.response?.data?.message || error.message);
